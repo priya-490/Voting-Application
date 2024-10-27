@@ -1,0 +1,47 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voting Application</title>
+    <link rel="stylesheet" href="index.css">
+
+</head>
+<body>
+    <div class="container">
+        <h1>Voting Application</h1>
+        <button class="vote-btn" onclick="cast_vote()">Cast Vote</button>
+        <p class="message" id="message"></p>
+    </div>
+
+    <script src="index.js"></script>
+</body>
+</html> -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voting Application</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Voting Application</h1>
+        <button class="vote-btn" onclick="showVotingForm()">Cast Vote</button>
+        <p class="message" id="message"></p>
+    </div>
+
+    <div id="voting-form" style="display: none;">
+        <h2>Enter Your Details</h2>
+        <input type="text" id="name" placeholder="Name" required>
+        <input type="text" id="aadhar" placeholder="Aadhar Number" required>
+        <button onclick="submitUserDetails()">Submit</button>
+        <p id="form-message"></p>
+    </div>
+
+    <script src="index.js"></script>
+</body>
+</html>

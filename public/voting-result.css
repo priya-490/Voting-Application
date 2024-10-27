@@ -1,0 +1,35 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+}
+
+#candidates-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.candidate-card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin: 10px;
+    padding: 20px;
+    width: 250px; /* Adjust width as needed */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.candidate-card h2 {
+    font-size: 1.5em;
+    margin: 0 0 10px;
+}
+
+.candidate-card p {
+    margin: 5px 0;
+}
