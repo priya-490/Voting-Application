@@ -1,52 +1,139 @@
-.candidates-container {
+/* Reset styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f7fa;
+    color: #333;
     display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
+    flex-direction: column;
+    align-items: center;
     padding: 20px;
+    min-height: 100vh;
+}
+
+h1 {
+    font-size: 2rem;
+    color: #64403e;
+    margin-bottom: 20px;
+}
+
+#candidates-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    width: 100%;
+    max-width: 1000px;
+    margin-top: 20px;
 }
 
 .candidate-card {
-    border: 1px solid #ccc;
-    padding: 15px;
-    border-radius: 8px;
-    width: 200px;
-    text-align: center;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.candidate-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.candidate-info {
+    max-width: 70%;
 }
 
 .candidate-info h2 {
-    margin: 0;
-    font-size: 1.2em;
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 8px;
+}
+
+.candidate-info p {
+    color: #555;
+    font-size: 0.9rem;
+    margin-bottom: 5px;
 }
 
 .toggle-button {
-    margin-top: 10px;
-    width: 50px;
-    height: 25px;
-    background-color: #ccc;
-    border-radius: 15px;
-    cursor: pointer;
     position: relative;
+    width: 40px;
+    height: 24px;
+    background-color: #ddd;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: background-color 0.3s;
 }
 
 .toggle-button.active {
-    background-color: #4caf50;
+    background-color: #64403e;
 }
 
 .toggle-circle {
     position: absolute;
+    top: 2px;
+    left: 2px;
     width: 20px;
     height: 20px;
     background-color: #fff;
     border-radius: 50%;
-    top: 2.5px;
-    left: 2.5px;
-    transition: left 0.3s;
+    transition: transform 0.3s;
 }
 
 .toggle-button.active .toggle-circle {
-    left: 27.5px;
+    transform: translateX(16px);
 }
-.btn-align{
-    width: 100px;
-    height: 50px;
+
+#submit-btn {
+    margin-top: 20px;
+    padding: 12px 24px;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #fff;
+    background-color: #64403e;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#submit-btn:disabled {
+    background-color: #bbb;
+    cursor: not-allowed;
+}
+
+#submit-btn:hover:not(:disabled) {
+    background-color: #64403e;
+}
+
+.btn-align {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #fff;
+    background-color: #64403e;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn-align:hover {
+    background-color: #64403e;
+}
+
+/* Text message styling */
+textarea, p {
+    font-size: 1.1rem;
+    color: #333;
+    margin: 15px 0;
 }

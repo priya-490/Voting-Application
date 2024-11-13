@@ -5,7 +5,7 @@ const  userSchema  = new mongoose.Schema({
         type: String,
         required:true
     },
-    adhar_no:{
+    aadhar:{
         type:Number,
         required : true,
         unique: true

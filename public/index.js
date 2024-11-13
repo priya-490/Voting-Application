@@ -28,6 +28,7 @@ async function submitUserDetails() {
 
         if (result.exists) {
             // If the user exists, show an error message
+            console.log('user exists');
             document.getElementById('form-message').innerText = "User already exists. You cannot vote.";
         }
         else {

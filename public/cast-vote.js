@@ -50,12 +50,35 @@ function selectCandidate(candidateId, toggleElement) {
 }
 
 // Handle vote submission
-function submission() {
+async function submission() {
     if (selectedCandidateId === null) {
         alert("Please select a candidate before submitting.");
         return;
     }
     // alert(`Vote submitted for candidate ID: ${selectedCandidateId}`);
+
+    // creating post equest for updating vote count 
+    try{
+        const response = await fetch ('/candidates/castVote',{
+            method: 'POST',
+            headers:{
+                'Content-Type':'application/json',
+
+            },
+            body: JSON.stringify({candidateId: selectedCandidateId}),
+        });
+        const result = await response.json();
+        if(response.ok){
+            console.log(result.message);
+        }
+        else{
+            console.error(result.message);
+        }
+    }catch(error){
+        console.log('Error:' ,error);
+    }
+
+    //
     document.body.innerHTML = '';
     const textarea = document.createElement('p');
     textarea.innerText = `Vote submitted for candidate ID: ${selectedCandidateId}`;
